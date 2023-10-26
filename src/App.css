@@ -1,0 +1,571 @@
+
+button, button a {
+  background: #c0c0c0;
+  border: none;
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 7px;
+}
+.Browse-Diamonds{
+  font-size: 12px;
+  border-bottom: 2px solid;
+  padding: 0;
+}
+.main-btn-setting button span {
+  color: black;
+  font-size: 12px;
+}
+.Browse-Diamonds:hover{
+ 
+  border-bottom: 2px solid black;
+}
+.main-btn-setting button p {
+  font-size: 12px;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+a{
+  text-decoration: none;
+    color: black;
+    font-weight: 500;
+    line-height: 25px;
+}
+li{
+  list-style: none;
+}
+.logo {
+  float: left;
+  margin: 0;
+  padding: 20px;
+}
+/* header style */
+.header{
+  background-color: orange;
+  height: 60px;
+}
+header {
+  background: orange;
+}
+header nav ul {
+  display: inline-flex;
+  column-gap: 28px;
+}
+.cart-div{
+  float: right;
+  margin: 30px;
+  position: relative;
+}
+.cart-div img{
+  width: 30px;
+}
+.all-pages-data {
+  text-align: center;
+}
+.cart-div span{
+  background-color: green;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  position:absolute;
+  top:-10px;
+  right:0px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-btn-setting button .change {
+  font-size: 12px;
+  border-bottom: 1px solid;
+  padding: 0;
+  margin: 0 10px;
+}
+.main-btn-setting button .change:hover{
+  color: black;
+}
+.singleProduct-img{
+  width: 60%;
+}
+.singleProduct-text-img-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.singleProduct-text-img-text span img {
+  width: 80px;
+}
+.singleProduct-text-add {
+  width: 81%;
+  padding-bottom: 15px;
+}
+.singleProduct-text-img-text p {
+  margin: auto !important;
+  text-align: start;
+}
+.total-price{
+  text-align: start;
+}
+.singleProduct-select-box select {
+  margin: 20px 0;
+  padding: 14px 98px;
+}
+/* end header style */
+
+/* product UI style */
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.detail-page-ring{
+  display: flex;
+}
+.product-item{
+  border: 1px solid #ccc;
+  padding: 20px;
+    margin: 20px;
+}
+.singleProduct .ChooseThisDiamond-5, .singleProduct .ChooseSettings-5{
+  display: none;
+}
+.singleProduct-text button {
+  background: #3e9f8e;
+  padding: 17px 97px;
+}
+p.total-price {
+  padding-top: 0 !important;
+  font-size: 25px !important;
+  font-weight: 600;
+}
+.singleProduct-text-img-text span.diamond-icon img {
+  width: 52px;
+}
+/* end product Ui style */
+
+/* cart page style */
+.cart-page-container{
+  display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.cart-page-container table{
+  flex: 65%;
+    border-collapse: collapse;
+}
+.cart-page-container table td{
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+.price-details{
+  flex: 35%;
+  margin: 0px 30px;
+}
+.price-details .adjust-price{
+  display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.price-details .adjust-price span{
+  font-size: 20px;
+}
+.singleProduct-text > p > span {
+  background: #a79494;
+  width: 30px;
+  height: 29px;
+  border-radius: 100%;
+  color: #fff;
+  margin: 10px;
+  padding: 5px;
+}
+.singleProduct {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.singleProduct-text p {
+  font-size: 16px;
+  margin: 15px 0;
+}
+.singleProduct-text > p:nth-child(even) {
+  padding-top: 19px;
+}
+.singleProduct-text {
+  max-width: 40%;
+}
+/* end cart page style */
+.search-box{
+  float: left;
+  width: 60%;
+  padding: 25px;
+}
+.search-box input{
+  width: 100%;
+    height: 30px;
+    padding-left: 10px;
+}
+.product-item img {
+  width: 100px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ====================================my ccs *=====================================*/
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+body{
+  overflow-x: hidden;
+}
+img{
+  width: 100%;
+}
+.main-content-p {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+
+
+.slider {
+  width: 50%;
+  height: 8px;
+  background-color: #cdd9ed;
+  margin-top: 20px;
+  
+}
+
+.slider .thumb{
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid #275efe;
+  margin-top: -8px;
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.customers-table{
+  margin-top: 60px;
+}
+table#customers tr th {
+  text-align: center;
+}
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+.main-content .values {
+  margin-top: 40px;
+}
+.resultdata.setings-Page-img {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+margin-top: 50px;
+}
+.all-pages-data .all-img1, .all-pages-data .all-img2,.all-pages-data .all-img3, .all-pages-data .all-img4 {
+max-width: 220px;
+max-height: 220px;
+}
+.all-card-four-color span{
+background-color: #ddd;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+}
+.all-card-four-color span:hover{
+box-shadow: 0 0 0 2px #3e9f8e;
+
+}
+.all-card-four-color span:nth-child(1){
+background-color: #efefee;
+}
+.all-card-four-color span:nth-child(2){
+background-color: #f2dda5;
+}
+.all-card-four-color span:nth-child(3){
+background-color: #f5c1a3;
+}
+.all-card-four-color span:nth-child(4){
+background-color: #dcdcdb;
+}
+.all-card-four-color{
+display: flex;
+justify-content: space-between;
+}
+.all-img2, .all-img3, .all-img4{
+display: none;
+}
+.all-card-four-color span:nth-child(1):hover .all-img2 {
+display: block;
+}
+.filter-metal, .multiple-product-filter{
+display: flex;
+justify-content: space-between;
+max-width: 50%;
+margin: 0 auto;
+margin-top: 20px;
+}
+.multiple-product-filter{
+width: 100% !important;
+}
+.filter-metal span, .multiple-product-filter span{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+}
+.multiple-product-filter span{
+background: #dcdcdb;
+}
+.filter-metal span:nth-child(1){
+background-color: #dcdcdb;
+}
+.filter-metal span:nth-child(2){
+background-color: #dcdcdb;
+}
+.filter-metal span:nth-child(3){
+background-color: #f2dda5;
+}
+.filter-metal span:nth-child(4){
+background-color: #f5c1a3;
+}
+table#customers tbody a {
+  display: contents;
+  width: 100%;
+}
+.main-btn-setting button img {
+  width: 70px;
+  margin-left: 11px;
+  height: auto;
+}
+/* =========================== */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+body {
+font-family: "IBM Plex Sans", sans-serif;
+font-weight: 300;
+font-size: 14px;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+h1,
+p {
+margin: 0;
+padding: 0;
+}
+/* .container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: linear-gradient(to bottom, #5b21b6, #1e40af);
+color: #fff;
+} */
+
+.buttons-container {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+.main-content-p p {
+  background: #3e9f8e;
+  color: #fff;
+  padding: 4px;
+  cursor: pointer;
+}
+.button {
+border: 1px solid #000;
+margin: 5px 5px;
+border-radius: 5px;
+padding: 5px 10px;
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+box-shadow: 3px 3px 0px 0px rgba(0, 0, 0);
+}
+
+.items-container {
+display: flex;
+flex-wrap: wrap;
+margin-top: 20px;
+justify-content: center;
+align-items: center;
+}
+
+.item {
+padding: 4px 10px;
+min-width: 100px;
+min-height: 50px;
+margin: 4px 10px;
+border: 1px solid #000;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.category {
+color: #64748b;
+font-size: 10px;
+}
+
+
+
+/* =========================== */
+.all-pages {
+display: flex;
+justify-content: space-between;
+}
+.card-para {
+background: red;
+width: 20%;
+color: #fff;
+font-size: 30px;
+}
+.main-btn-setting {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+.main-btn-setting button {
+  margin: 34px !important;
+  padding: 16px 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.browse-setting {
+  width: 100%;
+}
+.main-btn-setting button > a {
+  display: flex;
+  align-items: center;
+}
+.cart-page-text{
+  text-align: center;
+  padding: 20px 0;
+}
+.lab-diamond-btn {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+.lab-diamond-btn button{
+margin: 20px;
+padding: 10px;
+}
+.select-diamond button {
+  background-color: #000;
+  color: #fff;
+  width: 50%;
+  padding: 13px;
+  font-size: 16px;
+  margin: 25px 0;
+}
+.item img {
+width: 200px;
+}
+.userData-container {
+display: flex;
+flex-wrap: wrap;
+}
+.singleProduct img{
+  width: 300px;
+}
+.tablepopup {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  align-items: center;
+}
+.tablepopup img{
+ width: 300px;
+}
+.tablepopup p {
+  text-align: left;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+.select-diamond {
+  background: #00000059;
+  position: relative;
+}
+.select-diamond .tablepopup-text > button {
+  color: #fff;
+  font-size: 46px;
+  position: absolute;
+  top: -39px;
+  right: 0;
+  transform: rotate(44deg);
+  background: none;
+  width: auto;
+  cursor: pointer;
+}
+.tablepopup-img{
+  width: 50%;
+}
+.tablepopup-text{
+  width: 50%;
+}
+.popcrossIcon {
+  display: none;
+}

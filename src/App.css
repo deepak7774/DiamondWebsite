@@ -1,12 +1,5 @@
 
-button, button a {
-  background: #c0c0c0;
-  border: none;
-  font-size: 15px;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 7px;
-}
+
 .Browse-Diamonds{
   font-size: 12px;
   border-bottom: 2px solid;
@@ -27,32 +20,9 @@ button, button a {
   height: 40vmin;
   pointer-events: none;
 }
-a{
-  text-decoration: none;
-    color: black;
-    font-weight: 500;
-    line-height: 25px;
-}
-li{
-  list-style: none;
-}
-.logo {
-  float: left;
-  margin: 0;
-  padding: 20px;
-}
-/* header style */
-.header{
-  background-color: orange;
-  height: 60px;
-}
-header {
-  background: orange;
-}
-header nav ul {
-  display: inline-flex;
-  column-gap: 28px;
-}
+
+
+
 .cart-div{
   float: right;
   margin: 30px;
@@ -243,16 +213,9 @@ p.total-price {
   }
 }
 /* ====================================my ccs *=====================================*/
-.container {
-  margin: 0 auto;
-  max-width: 1280px;
-}
-body{
-  overflow-x: hidden;
-}
-img{
-  width: 100%;
-}
+
+
+
 .main-content-p {
   display: flex;
   gap: 50px;
@@ -392,30 +355,9 @@ table#customers tbody a {
   height: auto;
 }
 /* =========================== */
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
 
-body {
-font-family: "IBM Plex Sans", sans-serif;
-font-weight: 300;
-font-size: 14px;
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
 
-h1,
-p {
-margin: 0;
-padding: 0;
-}
-/* .container {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background: linear-gradient(to bottom, #5b21b6, #1e40af);
-color: #fff;
-} */
+
 
 .buttons-container {
 display: flex;
@@ -428,18 +370,7 @@ margin-top: 20px;
   padding: 4px;
   cursor: pointer;
 }
-.button {
-border: 1px solid #000;
-margin: 5px 5px;
-border-radius: 5px;
-padding: 5px 10px;
-cursor: pointer;
-transition: all 0.2s ease-in-out;
-}
 
-.button:hover {
-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0);
-}
 
 .items-container {
 display: flex;

@@ -22,7 +22,22 @@
 }
 
 
-
+.logo {
+  float: left;
+  margin: 0;
+  padding: 20px;
+}
+/* header style *//* .header{
+  background-color: orange;
+  height: 60px;
+}
+header {
+  background: orange;
+}
+header nav ul
+  display: inline-flex;
+  column-gap: 28px;
+}
 .cart-div{
   float: right;
   margin: 30px;
@@ -82,7 +97,7 @@
 .singleProduct-select-box select {
   margin: 20px 0;
   padding: 14px 98px;
-}
+} */
 /* end header style */
 
 /* product UI style */
@@ -213,7 +228,6 @@ p.total-price {
   }
 }
 /* ====================================my ccs *=====================================*/
-
 
 
 .main-content-p {
@@ -355,10 +369,6 @@ table#customers tbody a {
   height: auto;
 }
 /* =========================== */
-
-
-
-
 .buttons-container {
 display: flex;
 justify-content: center;
@@ -370,7 +380,6 @@ margin-top: 20px;
   padding: 4px;
   cursor: pointer;
 }
-
 
 .items-container {
 display: flex;

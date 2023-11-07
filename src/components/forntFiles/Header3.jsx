@@ -11,6 +11,8 @@ import {
 import { GiGlobeRing, GiHamburgerMenu } from "react-icons/gi";
 import { BiUpArrow, BiDownArrow } from "react-icons/bi";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { productSearch } from "../../redux/productAction";
 
 export const Header = () => {
   const [active, setActive] = useState(false);
@@ -29,13 +31,16 @@ export const Header = () => {
     }
   };
 
+  const result = useSelector((state) => state.cartData);
+  const dispatch = useDispatch();
+  console.warn("data in header", result);
   return (
     <>
       <header className="header">
         <div className="container">
           <div className="header-top">
             <div className="header-contact-us">
-              <Link className="button" to="/">
+              <Link className="button" to="#">
                 Contact Us
               </Link>
             </div>
@@ -47,28 +52,37 @@ export const Header = () => {
 
             <div className="header-icons">
               <div className="bell-icon">
-                <Link to="/">
+                <Link to="#">
                   <BsFillBellFill />
                   <span>01</span>
                 </Link>
               </div>
               <div className="search-icon">
-                <Link to="/">
+                <Link to="#" onClick={ToggleClass}>
                   <AiOutlineSearch />
                 </Link>
+                <input
+                  className={active ? "search-open" : "search-close"}
+                  type="text"
+                  onChange={(event) =>
+                    dispatch(productSearch(event.target.value))
+                  }
+                  placeholder="Search Product"
+                />
               </div>
               <div className="bag-icon">
-                <Link to="/">
+                <Link to="/cart">
+                  <span>{result.length}</span>
                   <BsBag />
                 </Link>
               </div>
               <div className="heart-icon">
-                <Link to="/">
+                <Link to="#">
                   <AiOutlineHeart />
                 </Link>
               </div>
               <div className="user-icon">
-                <Link to="/">
+                <Link to="#">
                   <AiOutlineUser />
                 </Link>
               </div>
@@ -86,11 +100,15 @@ export const Header = () => {
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink target="_parent" to="/ChooseSetting">
+                        Start with a setting
+                      </NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink target="_parent" to="/DiemondPageTabe1">
+                        Start with a Diamond
+                      </NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
@@ -559,45 +577,13 @@ export const Header = () => {
               </li>
             </ul>
           </nav>
+          {/* ===============================================header mobile device start ===================================================== */}
 
           <div
             className={
               active ? "mobile-nav-main nav-mobile" : "res-nav-main nav-mobile"
             }
           >
-            <div className="nav-mobile-logo">
-              <Link to="/">
-                <img src={samaLogo} alt="samaLogo" />
-              </Link>
-            </div>
-            <div className="nav-mobile-icons">
-              <div className="bell-icon">
-                <Link to="/">
-                  <BsFillBellFill />
-                  <span>01</span>
-                </Link>
-              </div>
-              <div className="search-icon">
-                <Link to="/">
-                  <AiOutlineSearch />
-                </Link>
-              </div>
-              <div className="bag-icon">
-                <Link to="/">
-                  <BsBag />
-                </Link>
-              </div>
-              <div className="heart-icon">
-                <Link to="/">
-                  <AiOutlineHeart />
-                </Link>
-              </div>
-              <div className="user-icon">
-                <Link to="/">
-                  <AiOutlineUser />
-                </Link>
-              </div>
-            </div>
             <div
               onClick={ToggleClass}
               className={
@@ -614,9 +600,15 @@ export const Header = () => {
             >
               <GiHamburgerMenu className="icon" />
             </div>
-            {/* ===============================================mobile device===================================================== */}
+            {/* ===============================================mobile device start navbar===================================================== */}
             <nav className={active ? "mobile-nav allnav" : "res-nav allnav"}>
-              <div className={selected ? "contents-show-main allnav-menu" : "contents-main allnav-menu"}>
+              <div
+                className={
+                  selected
+                    ? "contents-show-main allnav-menu"
+                    : "contents-main allnav-menu"
+                }
+              >
                 <ul>
                   <li className=" title" onClick={() => toggle(1)}>
                     <NavLink to="/">ENGAGEMENT RINGS</NavLink>
@@ -652,162 +644,182 @@ export const Header = () => {
                       {selected === 5 ? <BiUpArrow /> : <BiDownArrow />}
                     </span>
                   </li>
-                  </ul>
-                  </div>
-                  <div
-                    className={
-                      selected === 1
-                        ? "content-show main-content"
-                        : "content main-content"
-                    }
-                  >
-                    <ul>
-                      
-                    <li className=" title" onClick={() => toggle(1)}>
+                </ul>
+              </div>
+              <div
+                className={
+                  selected === 1
+                    ? "content-show main-content"
+                    : "content main-content"
+                }
+              >
+                <ul>
+                  <li className=" title" onClick={() => toggle(1)}>
                     <NavLink to="/">ENGAGEMENT RINGS</NavLink>
                     <span>
                       {selected === 1 ? <BiUpArrow /> : <BiDownArrow />}
                     </span>
                   </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                    </ul>
-                  </div>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                </ul>
+              </div>
 
-                  <div
-                    className={
-                      selected === 2
-                        ? "content-show main-content"
-                        : "content main-content"
-                    }
-                  >
-                    <ul>
-                    <li className=" title" onClick={() => toggle(2)}>
+              <div
+                className={
+                  selected === 2
+                    ? "content-show main-content"
+                    : "content main-content"
+                }
+              >
+                <ul>
+                  <li className=" title" onClick={() => toggle(2)}>
                     <NavLink to="/">WEDDING RINGS</NavLink>
                     <span>
                       {selected === 2 ? <BiUpArrow /> : <BiDownArrow />}
                     </span>
                   </li>
-                      <li>
-                        <NavLink to="/">name2</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                    </ul>
-                  </div>
+                  <li>
+                    <NavLink to="/">name2</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                </ul>
+              </div>
 
-                  <div
-                    className={
-                      selected === 3
-                        ? "content-show main-content"
-                        : "content main-content"
-                    }
-                  >
-                    <ul>
-                    <li className=" title" onClick={() => toggle(3)}>
+              <div
+                className={
+                  selected === 3
+                    ? "content-show main-content"
+                    : "content main-content"
+                }
+              >
+                <ul>
+                  <li className=" title" onClick={() => toggle(3)}>
                     <NavLink to="/">DIAMONDS</NavLink>
                     <span>
                       {selected === 3 ? <BiUpArrow /> : <BiDownArrow />}
                     </span>
                   </li>
-                      <li>
-                        <NavLink to="/">name3</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    className={
-                      selected === 4
-                        ? "content-show main-content"
-                        : "content main-content"
-                    }
-                  >
-                    <ul>
-                    <li className=" title" onClick={() => toggle(4)}>
+                  <li>
+                    <NavLink to="/">name3</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                </ul>
+              </div>
+              <div
+                className={
+                  selected === 4
+                    ? "content-show main-content"
+                    : "content main-content"
+                }
+              >
+                <ul>
+                  <li className=" title" onClick={() => toggle(4)}>
                     <NavLink to="/">GEMSTONES</NavLink>
                     <span>
                       {selected === 4 ? <BiUpArrow /> : <BiDownArrow />}
                     </span>
                   </li>
-                      <li>
-                        <NavLink to="/">name4</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    className={
-                      selected === 5
-                        ? "content-show main-content"
-                        : "content main-content"
-                    }
-                  >
-                    <ul>
-                    <li className=" title" onClick={() => toggle(5)}>
+                  <li>
+                    <NavLink to="/">name4</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                </ul>
+              </div>
+              <div
+                className={
+                  selected === 5
+                    ? "content-show main-content"
+                    : "content main-content"
+                }
+              >
+                <ul>
+                  <li className=" title" onClick={() => toggle(5)}>
                     <NavLink to="/">ABOUT</NavLink>
                     <span>
                       {selected === 5 ? <BiUpArrow /> : <BiDownArrow />}
                     </span>
                   </li>
-                      <li>
-                        <NavLink to="/">name5</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name5</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/">name1</NavLink>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="nav-mobile-contact-us">
-                    <Link className="button" to="/">
-                      Contact Us
-                    </Link>
-                  </div>
-                
-              
+                  <li>
+                    <NavLink to="/">name5</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name5</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/">name1</NavLink>
+                  </li>
+                </ul>
+              </div>
+              {/* <div className="nav-mobile-contact-us">
+                <Link className="button" to="/">
+                  Contact Us
+                </Link>
+              </div> */}
             </nav>
-
-            {/* ===============================================mobile device===================================================== */}
+            {/* ===============================================mobile device end only navbar===================================================== */}
+            <div className="nav-mobile-logo">
+              <Link to="/">
+                <img src={samaLogo} alt="samaLogo" />
+              </Link>
+            </div>
+            <div className="nav-mobile-icons">              
+              <div className="search-icon">
+                <Link to="/">
+                  <AiOutlineSearch />
+                </Link>
+              </div>
+              <div className="bag-icon">
+                <Link to="/">
+                  <BsBag />
+                </Link>
+              </div>
+              <div className="user-icon">
+                <Link to="/">
+                  <AiOutlineUser />
+                </Link>
+              </div>
+            </div>
           </div>
+          {/* =============================================== header mobile device start ===================================================== */}
+        
         </div>
       </header>
     </>

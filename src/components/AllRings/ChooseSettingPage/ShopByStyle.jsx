@@ -52,8 +52,9 @@ const ShopByStyle = () => {
 
   return (
     <>
-      <h1>This is the Settings page</h1>
+      
       <div className="main-content container">
+      <h3>Engagement Ring Settings</h3>
         <div>
           <div className="buttons-container">
             {filters.map((category, idx) => (

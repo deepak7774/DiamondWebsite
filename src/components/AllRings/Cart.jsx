@@ -24,7 +24,7 @@ const Cart = () => {
     <>
       <div className="cart-page-text">
         <Link to="/">Go to Products Link</Link>
-        <h1>Cart Page</h1>
+        <h3>Cart Page</h3>
       </div>
       <div className="cart-page-container">
         <table>

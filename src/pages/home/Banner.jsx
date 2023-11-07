@@ -7,13 +7,15 @@ export const Banner = () => {
     <>
     <div className='banner-main'>
         <img src={bannerImg} alt="" />
-        <div className=' container banner'>
+        <div className='container'>
+        <div className=' banner'>
             <div className='banner-text'>
             <h1>True to You</h1>
             <p>Carefully designs that celebrate your story</p>
-            <div><Link className='button' to="/">Shop Engageent Rings</Link></div>
+            <div><Link className='button' to="#">Shop Engagement Rings</Link></div>
             </div>
            
+        </div>
         </div>
     </div>
     </>

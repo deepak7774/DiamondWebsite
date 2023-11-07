@@ -103,7 +103,8 @@ const ShapCaret = () => {
     <>
       <div className="main-content">
         <div className="container">
-          <h1>This is Diamonds page</h1>
+          <h3>Design Your Own</h3>
+           <h3>Diamond Engagement Ring</h3>
           <div className="main-content-p">
             <p onClick={() => eventHandler("Round")}>Round</p>
             <p onClick={() => eventHandler("Oval")}>Oval</p>

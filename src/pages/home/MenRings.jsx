@@ -6,7 +6,8 @@ export const MenRings = () => {
   return (
     <>
      <div className="menRings">
-        <div className="container flex">
+        <div className=" container">
+          <div className='flex menRings-main'>
           <div className="menRings-text">
             <h2>Men’s Rings</h2>
             <p>Lorem Ipsum is printing and typesetting industry.</p>
@@ -23,6 +24,7 @@ export const MenRings = () => {
           <div className="menRings-img">
             <img src={menRings} alt="" />
           </div>
+        </div>
         </div>
       </div>
     </>

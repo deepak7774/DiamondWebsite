@@ -96,7 +96,7 @@ export const Header = () => {
                 <div className="engagement-ring flex">
                   <ul>
                     <li>
-                      <NavLink to="/">DESIGN YOUR OWN ENGAGEMENT RING</NavLink>
+                      <NavLink to="/">DESIGNs YOUR OWN ENGAGEMENT RING</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />

@@ -6,8 +6,8 @@ import { Home } from './pages/home/Home';
 // import Header from './pages/home/Header';
 import { Footer } from './pages/home/Footer';
 import { Routing } from './components/Routing';
-import Header from "./components/forntFiles/Header3";
 import { ChooseSetting } from "./components/AllRings/ChooseSettingPage/ChooseSetting";
+import Header from "./components/forntFiles/Header3";
 // import Header from './components/forntFiles/Header1';
 function App() {
   return (

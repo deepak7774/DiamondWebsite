@@ -7,7 +7,7 @@ import { GiGlobeRing, GiHamburgerMenu } from "react-icons/gi";
 import { BiUpArrow, BiDownArrow } from "react-icons/bi";
 import { useState } from "react";
 
-export const Header = () => {
+export const Header2 = () => {
   const [active, setActive] = useState(false);
 
   const ToggleClass = () => {

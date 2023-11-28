@@ -5,7 +5,7 @@
   padding: 0;
 }
 img {
-  width: 100%;
+  max-width: 100%;
 }
 .App {
   overflow: hidden;
@@ -255,6 +255,9 @@ nav.mobile-nav{
 .nav-mobile{
   display: none;
 }
+.engagement-ring > ul > li {
+  display: flex;
+}
 /* header end */
 /* accordion start */
  
@@ -288,24 +291,33 @@ nav.mobile-nav{
 }
 /* accordion end */
 /* banner start */
+.banner-main {
+  background: #e7eae9;
+}
 .banner-text a.button {
-  padding: 15px 30px;
- 
+  padding: 15px 30px; 
+}
+.banner-main .container {
+  max-width: 100%;
+  width: calc(50%  + 504px);
+  margin-left: auto;
+  margin-right: 0;
 }
 .banner-main{
     position: relative;
     overflow-x: hidden;
 }
-
-.banner-text {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
+.banner .banner-img img{
+  display: block;
+}
+.banner .banner-text {
+  width: 35%;
+}
+.banner .banner-img {
+  width: 65%;
+}
+.banner .banner-img img {
+  width: 100%;
 }
 .banner-text > p {
   padding: 18px 0px 34px;
@@ -486,10 +498,7 @@ position: relative;
   width: 56%;
   height: 100%;
 }
-/* .bridalSets 
- .bridalSets-img img {
-    object-position: center -67px;
-} */
+
 .bridalSets .bridalSets-img img, .bridalSets-2 .bridalSets-img img {
   width: 100%;
   object-fit: cover;
@@ -504,7 +513,7 @@ position: relative;
 }
 
 .bridalSets-text > p {
-  padding: 9px 0 20px;
+  padding: 15px 0 20px;
   font-weight: 600;
 }
 /* BridalSets End */
@@ -569,7 +578,15 @@ color: #232323;
   text-align: center;
     padding: 23px 0px;
 }
-
+.ftr-desktop{
+  display: block;
+}
+.mobile-footer{
+  display: none;
+}
+.contact-main{
+  display: none;
+}
 /* footer end */
 @media(min-width: 2250px){
 
@@ -587,6 +604,10 @@ color: #232323;
   .container{
     padding: 0 15px !important;
   }
+  .banner-main .container {
+    padding: 0 !important;
+    padding-left: 15px !important;
+}
   .menRings-text{
     padding-left: 15px;
   }
@@ -717,9 +738,13 @@ nav.mobile-nav > ul {
   padding: 5px 5px;
 
 }
- .allnav-menu > ul > li > a {
+.allnav-menu > ul > li > a {
   padding: 10px 0;
   display: inline-block;
+  margin-right: 10px;
+}
+.mobile-nav .content-show a {
+  margin-right: 10px;
 }
 nav.mobile-nav > ul > li > span{
   padding-left: 15px;
@@ -961,6 +986,25 @@ button.slick-arrow.slick-prev:after{
   display: none;
 }
 /* slider */
+.header-search input {
+  width: 100%;
+  height: 38px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.header-search {
+  position: relative;
+  margin-top: 15px;
+  width: 100%;
+  z-index: -1;
+}
+.header-search .search-icon {
+  position: absolute;
+  top: 8px;
+  right: 11px;
+  font-size: 22px;
+}
+
 }
 
 @media(max-width: 767px){
@@ -974,6 +1018,10 @@ button.slick-arrow.slick-prev:after{
 .menRings-img, .menRings-text {
   width: 100%;
 }
+.menRings-img {
+  width: 104vw;
+  margin-left: -14px;
+}
 .ftr-contact-form {
   width: 100%;
   max-width: 100%;
@@ -984,17 +1032,18 @@ button.slick-arrow.slick-prev:after{
 }
 
 .menRings .menRings-text {
-  padding: 15px;
+  padding: 40px 15px 40px 15px;
   max-width: 100%;
+  text-align: center;
 }
 .eternityRings-text p:nth-child(3), .menRings-text p:nth-child(3) {
-  padding: 6px 0 16px;
+  padding: 5px 0 25px;
 }
 .eternityRings-text p:nth-child(2), .menRings-text p:nth-child(2) {
-  padding: 15px 0px 0;
+  padding: 15px 0px 10px;
 }
 .bridalSets.flex {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   align-items: flex-start;
 }
 .bridalSets, .bridalSets-2 {
@@ -1009,7 +1058,91 @@ button.slick-arrow.slick-prev:after{
 .ShopDiamondShape-img-text img {
   width: 70px;
 }
+.banner .banner-text, .banner .banner-img{
+  width: 100%;
+}
+.banner.flex {
+  flex-direction: column-reverse;
+}
+.banner-main .container {
+  padding: 0 !important;
+}
+.banner-text {
+  text-align: center;
+  padding: 40px 15px;
+}
 
+.ftr-desktop{
+  display: none;
+}
+.mobile-footer{
+  display: block;
+}
+.mobile-footer ul.ftr-contact-ul {
+  width: 100%;
+}
+.mobile-footer ul.ftr-contact-ul > h4 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+.mobile-footer ul.ftr-contact-ul {
+  padding: 20px 0px 0px;
+  margin: 0;
+  border-top: 2px solid #ddd;
+}
+.mobile-footer .mobile-ftr-contact {
+  padding-top: 15px;
+}
+.mobile-footer ul.ftr-contact-form {
+  margin: 0;
+  border-top: 2px solid #ddd;
+}
+.contact-main {
+  display: block;
+  border-top: 2px solid #ddd;
+}
+.contact{
+  display: flex;
+  justify-content: space-around;
+}
+.contact-main h2 {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 40px;
+  font-size: 30px !important;
+}
+.contact-main {
+  display: block;
+  padding-bottom: 40px;
+}
+.contact-main .contact-call > a, .contact-main .contact-email > a, .contact-main .contact-chat > a {
+  font-size: 25px;
+  color: #310f4c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+footer.footer .container {
+  border-top: none;
+}
+.mobile-ftr-contact ul.content-show {
+  border-top: 2px solid #ddd;
+  padding: 20px 15px;
+}
+.mobile-footer ul.ftr-contact-ul > h4.active > a{
+  color: #654b79;
+}
+.mobile-footer .ftr-contact.flex ul li > a {
+  font-size: 17px;
+  letter-spacing: 0px;
+  line-height: 28px;
+  color: #232323;
+}
+.mobile-footer ul.ftr-contact-ul span {
+  color: #310f4c;
+}
 }
 @media(max-width: 639px){
   h1 {
@@ -1037,7 +1170,8 @@ button.slick-arrow.slick-prev:after{
   padding-left: 0;
   width: 100%;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  text-align: center;
 }
 .endsSoon-img {
   width: 100%;
@@ -1052,6 +1186,8 @@ button.slick-arrow.slick-prev:after{
 .eternityRings-img img {
   height: 376px;
   object-position: center;
+  width: 104vw;
+  margin-left: -10px;
 }
 .endsSoon {
   margin-bottom: 40px;
@@ -1070,6 +1206,9 @@ button.slick-arrow.slick-prev:after{
 }
 .eternityRings-text {
   padding: 15px;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 .ShopCategory {
   padding-bottom: 40px;
@@ -1083,7 +1222,7 @@ button.slick-arrow.slick-prev:after{
 }
 .button {
   font-size: 14px;
-  padding: 13px 20px !important;
+  padding: 14px 52px !important;
 }
 .submit-btn .button {
   padding: 16px 20px !important;
@@ -1092,7 +1231,7 @@ button.slick-arrow.slick-prev:after{
   padding: 13px 40px !important;
 }
 .banner-text a.button {
-  padding: 12px;
+  padding: 19px 43px !important;
 }
 .MostLoved .column-width, .ShopCategory .column-width {
   width: calc(100%/2 - 0px);
@@ -1103,20 +1242,23 @@ button.slick-arrow.slick-prev:after{
 .eternityRings .container {
   padding: 0px !important;
 }
-.mobile-Most-Loved-Engagement{
-  padding-bottom: 40px;
-}
+
 .bridalSets-2 .bridalSets-text {
   position: static;
   width: 100%;
-  padding:15px;
+  padding: 40px 15px 40px 15px;
+  text-align: center;
 }
 .bridalSets .bridalSets-text {
-  padding: 15px;
+  padding: 40px 15px 40px 15px;
   width: 100%;
+  text-align: center;
 }
 .bridalSets .bridalSets-img {
   width: 100%;
+  object-position: center;
+  width: 104vw;
+  margin-left: -14px;
 }
 .bridalSets.flex {
   flex-direction: column-reverse;
@@ -1127,9 +1269,7 @@ button.slick-arrow.slick-prev:after{
     width: calc(100%/3 - 0px);
     padding: 15px 10px;
 }
-.banner-main img{
-  height: 200px;
-}
+
 .engagement-ring > ul {
   width: 100%;
 }

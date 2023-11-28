@@ -11,7 +11,7 @@ export const ChooseRingProductCart = () => {
 
   const { productId } = useParams();
 
-  const Apidata = "http://localhost:3500/product";
+  const Apidata = "https://dev.demo-swapithub.com/diamond/api/v1/products";
 
   async function getStoreData() {
     try {

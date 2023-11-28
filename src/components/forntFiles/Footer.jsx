@@ -80,7 +80,7 @@ export const Footer = () => {
 
             <form action="#">
                 <div className="email"><input type="email" placeholder="Enter Email Address.." /></div>
-                <div className="submit-btn"><input className="button" type="submit" /></div>
+                <div className="submit-btn"><input className="button" type="submit" value="submit"/></div>
             </form>
 
             <div className="ftr-icons flex">

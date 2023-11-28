@@ -1,32 +1,78 @@
-import { takeEvery, put } from 'redux-saga/effects'
-import { PRODUCT_LIST, SEARCH_PRODUCT, SET_PRODUCT_LIST, GET_LIST_PRODUCT_ID } from './constant';
+import { takeEvery, put, call } from 'redux-saga/effects';
+import axios from 'axios'; // Import axios for making HTTP requests
+
+import {
+  PRODUCT_LIST,
+  SEARCH_PRODUCT,
+  SET_PRODUCT_LIST,
+  GET_LIST_PRODUCT_ID,
+} from './constant';
 
 function* getProducts() {
-    let data = yield fetch('http://localhost:3500/product');
-    data = yield data.json();
-    console.warn("action is called", data)
-    yield put({type: SET_PRODUCT_LIST, data})
+  try {
+    const response = yield call(axios.get, 'https://dev.demo-swapithub.com/diamond/api/v1/products');
+    
+    const productData = response.data.data;
+    console.log(productData);
+    const updatedProducts = yield Promise.all(
+      productData.map(async (product) => {
+        const finalLevel = calculateFinalLevel(product.finishLevel);
+        const finalMetalType = calculateFinalMetalType(product.metalType);
+
+        const priceResponse = await axios.get(
+          `https://www.overnightmountings.com/priceapi/service.php?action=pricecalculation&type=json&level=${finalLevel}&metaltype=${finalMetalType}&metalcolor=${product.metalColor}&stylenumber=${product.sku}&quality=${product.diamondQuality}`
+        );
+
+        return {
+          name: product.name,
+          image: product.default_image_url,
+          slug: product.slug,
+          price: priceResponse.data.price,
+          CenterShape: product.CenterShape
+        };
+      })
+    );
+
+    yield put({ type: SET_PRODUCT_LIST, data: updatedProducts });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+  
 }
 
-// function* getProductsId() {
-//     let dataId = yield fetch(`http://localhost:3500/product?q=${matchId.params.pid}`);
-//     dataId = yield dataId.json();
-//     console.warn("action is called dataId", matchId)
-//     yield put({type: SET_PRODUCT_LIST, matchId:dataId})
-// } 
+function calculateFinalLevel(level) {
+  if (level.indexOf('Complete') !== -1) {
+    return 'Complete';
+  }
+  if (level.indexOf('Polished') !== -1) {
+    return 'Polished';
+  }
+  if (level.indexOf('Semi-mount') !== -1) {
+    return 'Semi-mount';
+  }
+  return '';  
+}
 
-function* searchProducts(data) {
-    let result = yield fetch(`http://localhost:3500/product?q=${data.query}`);
-    result = yield result.json();
-    console.warn("action is called", result)
-    yield put({type: SET_PRODUCT_LIST, data:result})
+const calculateFinalMetalType = (metalType) => {
+    // Implement your logic for metal type conversion here
+    // ...
+
+    return '';
+  };
+function* searchProducts(action) {
+  try {
+    const result = yield call(fetch, `https://dev.demo-swapithub.com/diamond/api/v1/products?q=${action.data.query}`);
+    const data = yield result.json();
+    yield put({ type: SET_PRODUCT_LIST, data });
+  } catch (error) {
+    console.error('Error searching products:', error);
+  }
 }
 
 function* productSaga() {
-    yield takeEvery(PRODUCT_LIST, getProducts)
-    yield takeEvery(SEARCH_PRODUCT, searchProducts)
-    // yield takeEvery(GET_LIST_PRODUCT_ID, getProductsId)
-
+  yield takeEvery(PRODUCT_LIST, getProducts);
+  yield takeEvery(SEARCH_PRODUCT, searchProducts);
+  // yield takeEvery(GET_LIST_PRODUCT_ID, getProductsId);
 }
 
 export default productSaga;

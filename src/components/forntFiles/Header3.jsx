@@ -9,7 +9,7 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { GiGlobeRing, GiHamburgerMenu } from "react-icons/gi";
-import { BiUpArrow, BiDownArrow } from "react-icons/bi";
+import { BiUpArrow, BiDownArrow, BiPhoneCall } from "react-icons/bi";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { productSearch } from "../../redux/productAction";
@@ -96,7 +96,7 @@ export const Header = () => {
                 <div className="engagement-ring flex">
                   <ul>
                     <li>
-                      <NavLink to="/">DESIGNs YOUR OWN ENGAGEMENT RING</NavLink>
+                      <NavLink to="/">DESIGN YOUR OWN ENGAGEMENT RINGS</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
@@ -112,47 +112,92 @@ export const Header = () => {
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink to="/">Start with a Lab Grown Diamond</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink to="/">Start with a Gemstone</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink to="#">Start with a Bridal Set</NavLink>
                     </li>
                   </ul>
 
                   <ul>
                     <li>
-                      <NavLink to="/">DESIGN YOUR OWN ENGAGEMENT RING</NavLink>
+                      <NavLink to="#">SHOP BY SHAPE</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink to="#">Any Shape Center (peg-head)</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink to="#">Round</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink to="#">Princess</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink to="#">Pear</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
-                      <NavLink to="/">Start with a setting</NavLink>
+                      <NavLink to="#">Oval</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="#">Emerald</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="#">Marquise</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="#">Cushion</NavLink>
                     </li>
                   </ul>
 
                   <ul>
                     <li>
-                      <NavLink to="/">DESIGN YOUR OWN ENGAGEMENT RING</NavLink>
+                      <NavLink to="#">ENGAGEMENT RING STYLES</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="#">Most Loved</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="#">Solitaire</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="/">Halo</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="/">Hidden Halo</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="/">Three Stone</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="/">Two Stone</NavLink>
+                    </li>
+                    <li>
+                      <GiGlobeRing />
+                      <NavLink to="/">Matching Sets</NavLink>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <NavLink to="/">GEMSTONE ENGAGEMENT RINGS</NavLink>
                     </li>
                     <li>
                       <GiGlobeRing />
@@ -175,15 +220,14 @@ export const Header = () => {
                       <NavLink to="/">Start with a setting</NavLink>
                     </li>
                   </ul>
-
-                  <ul className="nav-img">
+                  {/* <ul className="nav-img">
                     <li>
                       <img
                         src="https://cdn.builder.io/api/v1/image/assets%2F9f2a69003c86470ea05deb9ecb9887be%2F9c4f5f89475d409189b25aba7233c258"
                         alt=""
                       />
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </li>
               <li>
@@ -800,20 +844,30 @@ export const Header = () => {
                 <img src={samaLogo} alt="samaLogo" />
               </Link>
             </div>
-            <div className="nav-mobile-icons">              
-              <div className="search-icon">
+            <div className="nav-mobile-icons">
+
+              <div className="call-icon">
                 <Link to="/">
-                  <AiOutlineSearch />
+                  <BiPhoneCall />
                 </Link>
               </div>
+
+              
               <div className="bag-icon">
                 <Link to="/">
                   <BsBag />
                 </Link>
-              </div>
-              <div className="user-icon">
+              </div>              
+            </div>
+            <div className="header-search">
+              <form action="#">
+                <input type="search" 
+                placeholder="Search"
+                />
+              </form>
+              <div className="search-icon">
                 <Link to="/">
-                  <AiOutlineUser />
+                  <AiOutlineSearch />
                 </Link>
               </div>
             </div>

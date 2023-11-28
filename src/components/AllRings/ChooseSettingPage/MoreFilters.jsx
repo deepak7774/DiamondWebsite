@@ -153,7 +153,7 @@ else{
       <div className="resultdata setings-Page-img">
         {
           filteredData.map((item) => {
-            console.warn("item setting data", item);
+            // console.warn("item setting data", item);
             return (
               <>
               <Link to={`/mainPage2/${item.id} `}>

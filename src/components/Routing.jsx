@@ -20,14 +20,12 @@ import { MainPage4_1 } from './AllRings/mainPageTabe/ringPageTable/MainPage4_1'
 import { ChooseSetting } from './AllRings/ChooseSettingPage/ChooseSetting'
 import { Home } from '../pages/home/Home'
 
-
 export const Routing = () => {
-  return (
-    <div>
+  return (   
         <Routes>
         {/* <Route path='/' exact element={<MainPage />} /> */}
         <Route path='/' exact element={<Home />}/>
-        <Route path='mainPage2/:productId'  element={<MainPage2 />} /> 
+        <Route path='mainPage2/:slug'  element={<MainPage2 />} /> 
         <Route path='mainPage3/:productId' element={<MainPage3/>}/>
         <Route path='mainPage4/:productId' element={<MainPage4/>}/>
         <Route path='mainPage4_1/:productId' element={<MainPage4_1/>}/>
@@ -35,7 +33,7 @@ export const Routing = () => {
         <Route path='chooseDiamondProduct' element={< ChooseDiamondProduct />} />
         <Route path='chooseDiamondProductCart/:productId' element={< ChooseDiamondProductCart />} />
         <Route path='shopByStyle' element={<ShopByStyle />} /> 
-        <Route path='chooseRingProduct/:productId' element={<ChooseRingProduct />} />
+        <Route path='chooseRingProduct/:slug' element={<ChooseRingProduct />} />
         <Route path='chooseRingProductCart/:productId' element={<ChooseRingProductCart />} />
         <Route path='addToBag/:productId' element={<AddToBag />} /> 
         <Route path='cart' element={<Cart/>} />
@@ -45,6 +43,6 @@ export const Routing = () => {
         <Route path="mainPage3/:productId" element={<TablePopUp/>}/>
         <Route path="ChooseSetting" element={<ChooseSetting/>}/>      
       </Routes> 
-    </div>
+    
   )
 }

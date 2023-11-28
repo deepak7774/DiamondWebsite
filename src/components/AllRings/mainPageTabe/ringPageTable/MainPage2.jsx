@@ -7,35 +7,78 @@ import { ChooseDiamonds } from "../../ChooseDiamondPage/ChooseDiamonds";
 export const MainPage2 = () => {
   const [activeSingle, setActiveSingle] = useState("ChooseRingProduct");
   const [productData, setProductData] = useState({
-    ringPrice: [],
-    img1: "",
-    id: "",
     name: "",
+    image: "",
+    price: [],
+    metalType: "",
+    metalColor: "",
+    finishLevel: "",
+    diamondQuality: "",
+    sku: "",
+    // Add more properties as needed
   });
-  const { productId } = useParams();
 
-  const Apidata = "http://localhost:3500/product";
-
-  async function getStoreData() {
-    try {
-      const res = await axios.get(`${Apidata}/${productId}`);
-      const responseData = res.data; // Store the response data in a variable
-      setProductData({
-        ringPrice: responseData.ringPrice,
-        img1: responseData.img1,
-        id: responseData.id,
-        name: responseData.name,
-      });
-      console.log("data=======", responseData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }
+  const { slug: productId } = useParams();
+  console.log(productId);
 
   useEffect(() => {
-    getStoreData();
-  }, [productId]);
-  console.log(productData);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://dev.demo-swapithub.com/diamond/api/v1/products');
+        const product = response.data.data.find(product => product.slug === productId);
+        console.log(product);
+
+        if (product) {
+          const finalLevel = calculateFinalLevel(product.finishLevel);
+          const finalMetalType = calculateFinalMetalType(product.metalType);
+
+          const priceResponse = await axios.get(
+            `https://www.overnightmountings.com/priceapi/service.php?action=pricecalculation&type=json&level=${finalLevel}&metaltype=${finalMetalType}&metalcolor=${product.metalColor}&stylenumber=${product.sku}&quality=${product.diamondQuality}`
+          );
+
+          setProductData({
+            name: product.name,
+            image: product.default_image_url,
+            price: priceResponse.data.price,
+            metalType: product.metalType,
+            metalColor: product.metalColor,
+            finishLevel: product.finishLevel,
+            diamondQuality: product.diamondQuality,
+            sku: product.sku,
+            // Add more properties as needed
+          });
+          
+        } else {
+          console.log(`Product with ID ${productId} not found.`);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [productId]); // Dependency on productId means this effect will re-run whenever productId changes
+
+  const calculateFinalLevel = (level) => {
+    if (level.indexOf('Complete') !== -1) {
+      return 'Complete';
+    }
+    if (level.indexOf('Polished') !== -1) {
+      return 'Polished';
+    }
+    if (level.indexOf('Semi-mount') !== -1) {
+      return 'Semi-mount';
+    }
+    return '';
+  };
+
+  const calculateFinalMetalType = (metalType) => {
+    // Implement your logic for metal type conversion here
+    // ...
+
+    return '';
+  };
+
   return (
     <div>
       <div className="main-btn-setting">

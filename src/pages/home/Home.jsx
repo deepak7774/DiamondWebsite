@@ -11,6 +11,7 @@ import { MenRings } from './MenRings'
 import { ShopDiamondSlider } from './ShopDiamondSlider'
 import { MostLovedSlider } from './MostLovedSlider'
 import { ShopByCategorySlider } from './ShopByCategorySlider'
+import { Contact } from './Contact'
 
 
 export const Home = () => {
@@ -28,6 +29,7 @@ export const Home = () => {
   <MenRings/>
   <MostLoved/>
   <MostLovedSlider/>
+  <Contact/>
 </div>
     
     </>

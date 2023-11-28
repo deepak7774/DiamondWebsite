@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../../../App.css";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
-import { productList } from '../../../redux/productAction';
+import { useSelector, useDispatch } from "react-redux";
+import { productList } from "../../../redux/productAction";
 
 const ShopByStyle = () => {
   const [filteredData, setFilteredData] = useState([]);
@@ -52,9 +52,9 @@ const ShopByStyle = () => {
 
   return (
     <>
-      
-      <div className="main-content container">
-      <h3>Engagement Ring Settings</h3>
+    <div className="container">
+      <div className="main-content">
+        <h3>Engagement Ring Settings</h3>
         <div>
           <div className="buttons-container">
             {filters.map((category, idx) => (
@@ -74,10 +74,11 @@ const ShopByStyle = () => {
 
       <div className="resultdata setings-Page-img">
         {filteredData.map((item) => (
-          <div key={item.id} className="all-pages-data ">
-            <Link to={`/mainPage2/${item.id}`}>
+          <div key={item.slug} className="all-pages-data ">
+            <Link to={`/mainPage2/${item.slug}`}>
               <div className="all-img1">
-                <img src={item.img1} alt={item.name} />
+                <img src={item.image} alt={item.name} />
+                
               </div>
               <div className="all-card-four-color">
                 <span></span>
@@ -86,12 +87,13 @@ const ShopByStyle = () => {
                 <span></span>
               </div>
               <p>{item.name}</p>
-              <p>${item.ringPrice}</p>
+              <p>${item.price}</p>
               <p>{item.color}</p>
               <p className="multiCategory">{item.multiCategory}</p>
             </Link>
           </div>
         ))}
+      </div>
       </div>
     </>
   );

@@ -3,7 +3,6 @@ import MoreFilters from './MoreFilters';
 import ShopByStyle from './ShopByStyle';
 
 
-
 export const ChooseSetting = () => {
 const [myActive, setMyActive] = useState("ShopByStyle");
 console.warn("=========",myActive);

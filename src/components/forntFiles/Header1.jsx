@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { productSearch } from "../../redux/productAction";
 
-export const Header1 = () => {
+export const Header = () => {
   const result = useSelector((state) => state.cartData);
   const dispatch = useDispatch();
   console.warn("data in header", result);
